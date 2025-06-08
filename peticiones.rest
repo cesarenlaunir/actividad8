@@ -1,0 +1,18 @@
+@host = http://localhost:3000
+
+## AUTORES ##
+
+# Obtener todos
+###
+GET {{host}}/api/autores
+
+# Crear autor
+###
+POST {{host}}/api/autores/registro
+Content-Type: application/json
+
+{
+    "nombre": "César Ibáñez",
+    "email": "cesaribanez@email.com",
+    "imagen": "foto_cesar.jpg"
+}
