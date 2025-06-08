@@ -16,3 +16,23 @@ Content-Type: application/json
     "email": "cesaribanez@email.com",
     "imagen": "foto_cesar.jpg"
 }
+
+
+## POSTS ##
+
+# Obtener todos
+###
+GET {{host}}/api/posts
+
+#Create post
+###
+POST {{host}}/api/posts/publish
+Content-Type: application/json
+
+{
+    "titulo": "Título del post",
+    "descripcion": "Descripción del post creado",
+    "fechacrea": "",
+    "categoria": "Categoria",
+    "autores_id": "1"
+}
