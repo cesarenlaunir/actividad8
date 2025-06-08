@@ -5,10 +5,16 @@ const getAll = async (req, res) => {
     res.json(posts);
 };
 
+const getByAuthorId = async (req, res) => {
+    const authorId = Number(req.params.authorId);
+    const posts = await Posts.selectByAuthorId(authorId);
+    res.json(posts);
+};
+
 const create = async (req, res) => {
     const post = await Posts.insert(req.body);
 
     res.json(post);
 };
 
-module.exports = { getAll, create };
+module.exports = { getAll, getByAuthorId, create };

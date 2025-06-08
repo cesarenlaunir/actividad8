@@ -5,11 +5,17 @@ const getAll = async (req, res) => {
     res.json(autores);
 };
 
-const getByEmail = async (req, res) => {
-    const { email } = await Autores.selectByEmail(email);
+// const getById = async (req, res) => {
+//     const { email } = await Autores.selectByEmail(email);
 
-    res.json(autores);
-};
+//     res.json(autores);
+// };
+
+// const getByEmail = async (req, res) => {
+//     const { email } = await Autores.selectByEmail(email);
+
+//     res.json(autores);
+// };
 
 const create = async (req, res) => {
     const usuario = await Autores.insert(req.body);
@@ -17,4 +23,5 @@ const create = async (req, res) => {
     res.json(usuario);
 };
 
-module.exports = { getAll, getByEmail, create };
+// module.exports = { getAll, getByEmail, getById, create };
+module.exports = { getAll, create };

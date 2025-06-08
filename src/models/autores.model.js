@@ -10,14 +10,27 @@ const selectAll = async (req, res) => {
     return result;
 };
 
-const selectByEmail = async (autorId) => {
+const selectById = async (autorId) => {
+    const [result] = await db.query(
+        `
+        SELECT *
+        FROM autores
+        WHERE id = ?
+        `,
+        [autorId]
+    );
+
+    return result[0];
+};
+
+const selectByEmail = async (autorEmail) => {
     const [result] = await db.query(
         `
         SELECT *
         FROM autores
         WHERE email = ?
         `,
-        [autorId]
+        [autorEmail]
     );
 
     return result[0];
@@ -36,4 +49,4 @@ const insert = async ({ nombre, email, imagen }) => {
     return result;
 };
 
-module.exports = { selectAll, selectByEmail, insert };
+module.exports = { selectAll, selectById, selectByEmail, insert };

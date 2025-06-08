@@ -12,19 +12,22 @@ POST {{host}}/api/autores/registro
 Content-Type: application/json
 
 {
-    "nombre": "César Ibáñez",
-    "email": "cesaribanez@email.com",
-    "imagen": "foto_cesar.jpg"
+    "nombre": "Usuario Uno",
+    "email": "usuariouno@email.com",
+    "imagen": "foto_usuariouno.jpg"
 }
-
 
 ## POSTS ##
 
-# Obtener todos
+# Obtener todos los posts
 ###
 GET {{host}}/api/posts
 
-#Create post
+# Obtener todos los posts de un usuario
+###
+GET {{host}}/api/posts/3
+
+# Crear post
 ###
 POST {{host}}/api/posts/publish
 Content-Type: application/json
@@ -32,7 +35,6 @@ Content-Type: application/json
 {
     "titulo": "Título del post",
     "descripcion": "Descripción del post creado",
-    "fechacrea": "",
     "categoria": "Categoria",
-    "autores_id": "1"
+    "autores_id": "4"
 }
